@@ -1,0 +1,14 @@
+/* components.css - reusable UI components */
+.progress-shell {
+  height: 10px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #e9ecef;
+}
+
+.progress-fill {
+  height: 100%;
+  width: var(--progress, 0%);
+  background: var(--color-primary);
+  transition: width var(--transition-speed) ease;
+}
