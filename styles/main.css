@@ -1,0 +1,15 @@
+/* main.css - entry stylesheet for Arcade Hub */
+/* Uses @import to load layout and component styles */
+@import url('layout.css');
+@import url('components.css');
+
+:root {
+  --color-primary: #6f42c1;
+  --color-accent: #fd7e14;
+  --color-bg: #f8f9fa;
+  --transition-speed: 0.3s;
+}
+
+body {
+  font-family: 'Nunito', system-ui, sans-serif;
+}
