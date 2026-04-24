@@ -1,0 +1,5 @@
+[
+  {"id":1,"player":"hassan","score":450,"difficulty":"hard","timestamp":"2026-04-24"},
+  {"id":2,"player":"sara","score":380,"difficulty":"medium","timestamp":"2026-04-23"},
+  {"id":3,"player":"ahmed","score":320,"difficulty":"easy","timestamp":"2026-04-22"}
+]
