@@ -2,14 +2,142 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Game - Arcade Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Match - Arcade Hub</title>
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   <link rel="stylesheet" href="../styles/main.css">
 </head>
-<body>
-  <main class="container py-5">
-    <h1>Memory Match</h1>
-    <!-- TODO: game board -->
+<body class="d-flex flex-column min-vh-100">
+
+  <!-- NAVBAR with logout / شريط التنقل مع زر الخروج -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="../index.html">
+        <i class="bi bi-controller"></i> Arcade Hub
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#navMenu" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">
+              <i class="bi bi-house"></i> Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="leaderboard.html">
+              <i class="bi bi-trophy"></i> Leaderboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <span class="nav-link text-warning">
+              <i class="bi bi-person-circle"></i> 
+              <span id="currentUser">Guest</span>
+            </span>
+          </li>
+          <li class="nav-item">
+            <button id="logoutBtn" class="btn btn-outline-light btn-sm ms-2">
+              <i class="bi bi-box-arrow-right"></i> Logout
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- GAME AREA / منطقة اللعبة -->
+  <main class="flex-grow-1 py-4">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h1 class="display-5">
+          <i class="bi bi-puzzle"></i> Memory Match
+        </h1>
+        <p class="text-muted">Match all pairs to win! / اطبق كل الأزواج عشان تفوز</p>
+      </div>
+
+      <!-- Score Bar / شريط النقاط -->
+      <div class="row g-3 mb-4 justify-content-center">
+        <div class="col-6 col-md-2">
+          <div class="card text-center bg-primary text-white">
+            <div class="card-body p-2">
+              <small>Score</small>
+              <h4 id="scoreDisplay" class="mb-0">0</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-2">
+          <div class="card text-center bg-info text-white">
+            <div class="card-body p-2">
+              <small>Attempts</small>
+              <h4 id="attemptsDisplay" class="mb-0">0</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-2">
+          <div class="card text-center bg-success text-white">
+            <div class="card-body p-2">
+              <small>Time</small>
+              <h4 id="timerDisplay" class="mb-0">0s</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-2">
+          <div class="card text-center bg-warning text-dark">
+            <div class="card-body p-2">
+              <small>Best</small>
+              <h4 id="bestScoreDisplay" class="mb-0">-</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Progress Bar / شريط التقدم -->
+      <div class="mb-4">
+        <div class="progress-shell">
+          <div id="progressBar" class="progress-fill"></div>
+        </div>
+      </div>
+
+      <!-- Game Controls / أزرار التحكم -->
+      <div class="text-center mb-4">
+        <button id="resetBtn" class="btn btn-primary me-2">
+          <i class="bi bi-arrow-clockwise"></i> New Game
+        </button>
+        <select id="difficultySelect" class="form-select d-inline-block w-auto">
+          <option value="easy">Easy (4 pairs)</option>
+          <option value="medium" selected>Medium (8 pairs)</option>
+          <option value="hard">Hard (12 pairs)</option>
+        </select>
+      </div>
+
+      <!-- Game Board / لوحة اللعبة -->
+      <div id="gameBoard" class="row g-2 justify-content-center">
+        <div class="col-12 text-center text-muted py-5">
+          <i class="bi bi-hourglass display-4"></i>
+          <p class="mt-2">Game logic coming on Day 4 / منطق اللعبة يجي يوم 4</p>
+        </div>
+      </div>
+
+      <!-- Status Message / رسالة الحالة -->
+      <div class="text-center mt-4">
+        <p id="statusMessage" class="text-muted"></p>
+      </div>
+    </div>
   </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark text-light py-3 mt-auto">
+    <div class="container text-center small">
+      <p class="mb-0">Arcade Hub — CIS 376 Final Project</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Game module - implemented on Day 4 / موديول اللعبة يجي يوم 4 -->
 </body>
 </html>
