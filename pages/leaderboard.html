@@ -2,14 +2,211 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Leaderboard - Arcade Hub</title>
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   <link rel="stylesheet" href="../styles/main.css">
 </head>
-<body>
-  <main class="container py-5">
-    <h1>Leaderboard</h1>
-    <!-- TODO: leaderboard table + search/filter -->
+<body class="d-flex flex-column min-vh-100 bg-light">
+  <!-- NAVBAR / شريط التنقل -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="../index.html">
+        <i class="bi bi-controller"></i> Arcade Hub
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#navMenu" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">
+              <i class="bi bi-house"></i> Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="game.html">
+              <i class="bi bi-joystick"></i> Play
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="leaderboard.html">
+              <i class="bi bi-trophy"></i> Leaderboard
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- LEADERBOARD CONTENT / محتوى الليدربورد -->
+  <main class="flex-grow-1 py-4">
+    <div class="container">
+      
+      <!-- Page Header / عنوان الصفحة -->
+      <div class="text-center mb-4">
+        <h1 class="display-5">
+          <i class="bi bi-trophy-fill text-warning"></i> Leaderboard
+        </h1>
+        <p class="text-muted">Top players ranked by score / أفضل اللاعبين حسب النقاط</p>
+      </div>
+
+      <!-- Filter & Search Bar / شريط البحث والفلترة -->
+      <div class="card shadow-sm mb-4">
+        <div class="card-body">
+          <div class="row g-3 align-items-end">
+            
+            <!-- Search Input / حقل البحث -->
+            <div class="col-md-5">
+              <label for="searchInput" class="form-label">
+                <i class="bi bi-search"></i> Search by player name
+              </label>
+              <input type="text" id="searchInput" class="form-control" 
+                     placeholder="Type a player name...">
+            </div>
+            
+            <!-- Difficulty Filter / فلتر الصعوبة -->
+            <div class="col-md-4">
+              <label for="difficultyFilter" class="form-label">
+                <i class="bi bi-funnel"></i> Filter by difficulty
+              </label>
+              <select id="difficultyFilter" class="form-select">
+                <option value="all" selected>All Difficulties</option>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+              </select>
+            </div>
+            
+            <!-- Sort Toggle / زر الترتيب -->
+            <div class="col-md-3">
+              <label for="sortSelect" class="form-label">
+                <i class="bi bi-sort-numeric-down"></i> Sort by
+              </label>
+              <select id="sortSelect" class="form-select">
+                <option value="score-desc" selected>Highest Score</option>
+                <option value="score-asc">Lowest Score</option>
+                <option value="recent">Most Recent</option>
+              </select>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats Summary / ملخص الإحصائيات -->
+      <div class="row g-3 mb-4">
+        <div class="col-md-4">
+          <div class="card text-center shadow-sm">
+            <div class="card-body">
+              <i class="bi bi-people-fill display-6 text-primary"></i>
+              <p class="text-muted mb-0">Total Players</p>
+              <h3 id="totalPlayers" class="mb-0">0</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center shadow-sm">
+            <div class="card-body">
+              <i class="bi bi-star-fill display-6 text-warning"></i>
+              <p class="text-muted mb-0">Highest Score</p>
+              <h3 id="highestScore" class="mb-0">0</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center shadow-sm">
+            <div class="card-body">
+              <i class="bi bi-bar-chart-fill display-6 text-success"></i>
+              <p class="text-muted mb-0">Average Score</p>
+              <h3 id="averageScore" class="mb-0">0</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Leaderboard Table / جدول الليدربورد -->
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-hover align-middle">
+              <thead class="table-dark">
+                <tr>
+                  <th scope="col">Rank</th>
+                  <th scope="col">Player</th>
+                  <th scope="col">Score</th>
+                  <th scope="col">Difficulty</th>
+                  <th scope="col">Date</th>
+                </tr>
+              </thead>
+              <tbody id="leaderboardBody">
+                <!-- Rows populated by JavaScript / الصفوف يتم تعبئتها بالـ JS -->
+                <tr>
+                  <td colspan="5" class="text-center text-muted py-4">
+                    <i class="bi bi-hourglass"></i> Loading leaderboard data...
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add Score Form / نموذج إضافة نقاط -->
+      <div class="card shadow-sm mt-4">
+        <div class="card-header bg-primary text-white">
+          <h5 class="mb-0">
+            <i class="bi bi-plus-circle"></i> Submit Your Score
+          </h5>
+        </div>
+        <div class="card-body">
+          <form id="scoreForm">
+            <div class="row g-3">
+              <div class="col-md-4">
+                <label for="playerName" class="form-label">Player Name</label>
+                <input type="text" id="playerName" class="form-control" required>
+              </div>
+              <div class="col-md-3">
+                <label for="playerScore" class="form-label">Score</label>
+                <input type="number" id="playerScore" class="form-control" min="0" required>
+              </div>
+              <div class="col-md-3">
+                <label for="scoreDifficulty" class="form-label">Difficulty</label>
+                <select id="scoreDifficulty" class="form-select" required>
+                  <option value="easy">Easy</option>
+                  <option value="medium" selected>Medium</option>
+                  <option value="hard">Hard</option>
+                </select>
+              </div>
+              <div class="col-md-2 d-flex align-items-end">
+                <button type="submit" class="btn btn-success w-100">
+                  <i class="bi bi-check-circle"></i> Submit
+                </button>
+              </div>
+            </div>
+            <small class="text-muted mt-2 d-block">
+              <i class="bi bi-info-circle"></i> 
+              Form data will be packaged as JSON and printed to the console.
+            </small>
+          </form>
+        </div>
+      </div>
+
+    </div>
   </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark text-light py-3 mt-auto">
+    <div class="container text-center small">
+      <p class="mb-0">Arcade Hub — CIS 376 Final Project</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Leaderboard module - implemented on Day 5 / موديول الليدربورد يجي يوم 5 -->
 </body>
 </html>
