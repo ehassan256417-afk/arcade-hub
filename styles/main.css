@@ -1,15 +1,115 @@
-/* main.css - entry stylesheet for Arcade Hub */
-/* Uses @import to load layout and component styles */
+/* ============================================ */
+/* main.css - Entry Stylesheet for Arcade Hub */
+/* الستايل الرئيسي لتطبيق أركيد هب */
+/* ============================================ */
+
+/* Import other stylesheets / نستورد ملفات الستايل الأخرى */
 @import url('layout.css');
 @import url('components.css');
 
+/* Import Google Fonts (Nunito) / استيراد خط Nunito */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+/* CSS Variables / متغيرات الستايل */
 :root {
   --color-primary: #6f42c1;
+  --color-primary-dark: #5a37a3;
   --color-accent: #fd7e14;
+  --color-success: #198754;
   --color-bg: #f8f9fa;
+  --color-card-bg: #ffffff;
   --transition-speed: 0.3s;
+  --border-radius: 8px;
+  --shadow-soft: 0 2px 8px rgba(0,0,0,0.08);
+  --shadow-hover: 0 6px 16px rgba(0,0,0,0.12);
 }
 
+/* Body styling / ستايل الـ body */
 body {
   font-family: 'Nunito', system-ui, sans-serif;
+  background-color: var(--color-bg);
+  color: #212529;
+}
+
+/* Navbar enhancements / تحسينات الـ navbar */
+.navbar-brand {
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+.navbar .nav-link {
+  transition: opacity var(--transition-speed) ease;
+}
+
+.navbar .nav-link:hover {
+  opacity: 0.85;
+}
+
+/* Hero gradient background / خلفية القسم الرئيسي */
+.bg-gradient-primary {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+/* Card hover effect / تأثير المرور على الكارت */
+.card {
+  transition: transform var(--transition-speed) ease, 
+              box-shadow var(--transition-speed) ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Button enhancements / تحسينات الأزرار */
+.btn {
+  transition: all var(--transition-speed) ease;
+  font-weight: 600;
+}
+
+.btn-lg {
+  padding: 0.75rem 1.5rem;
+}
+
+/* Focus visible for accessibility / تحسين الـ focus للـ accessibility */
+*:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Table styling / ستايل الجدول */
+.table thead th {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+/* Rainbow theme easter egg / ثيم قوس قزح للمفاجأة */
+body.theme-rainbow {
+  animation: rainbowShift 3s linear infinite;
+}
+
+@keyframes rainbowShift {
+  0%   { background-color: #ffe5e5; }
+  17%  { background-color: #fff5e5; }
+  33%  { background-color: #ffffe5; }
+  50%  { background-color: #e5ffe5; }
+  67%  { background-color: #e5f5ff; }
+  83%  { background-color: #f0e5ff; }
+  100% { background-color: #ffe5e5; }
+}
+
+/* Reduced motion accessibility / مراعاة المستخدمين الحساسين للحركة */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Mobile responsiveness / التجاوب مع الموبايل */
+@media (max-width: 576px) {
+  .display-3 { font-size: 2.5rem; }
+  .display-5 { font-size: 1.8rem; }
 }
