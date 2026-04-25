@@ -3,17 +3,158 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arcade Hub - Coming Soon</title>
+  <meta name="description" content="A login-gated web arcade featuring Emoji Memory Match with persistent leaderboard">
+  <title>Arcade Hub - Home</title>
+  
+  <!-- External Stylesheets / المكتبات الخارجية -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  
+  <!-- Custom Styles / الستايل الخاص -->
   <link rel="stylesheet" href="styles/main.css">
 </head>
-<body class="bg-light">
-  <main class="container py-5 text-center">
-    <h1 class="display-4"><i class="bi bi-controller"></i> Arcade Hub</h1>
-    <p class="lead">Coming soon — final project under construction.</p>
+<body class="d-flex flex-column min-vh-100">
+
+  <!-- ============================================ -->
+  <!-- NAVBAR - شريط التنقل العلوي -->
+  <!-- ============================================ -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">
+        <i class="bi bi-controller"></i> Arcade Hub
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#navMenu" aria-controls="navMenu" 
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">
+              <i class="bi bi-house"></i> Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pages/game.html">
+              <i class="bi bi-joystick"></i> Play
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pages/leaderboard.html">
+              <i class="bi bi-trophy"></i> Leaderboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-warning text-dark ms-2 px-3" href="pages/login.html">
+              <i class="bi bi-box-arrow-in-right"></i> Login
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================ -->
+  <!-- HERO SECTION - القسم الرئيسي الترحيبي -->
+  <!-- ============================================ -->
+  <main class="flex-grow-1">
+    <section class="bg-gradient-primary py-5">
+      <div class="container py-5 text-center">
+        <h1 class="display-3 fw-bold text-primary mb-3">
+          <i class="bi bi-controller"></i> Welcome to Arcade Hub
+        </h1>
+        <p class="lead mb-4">
+          A login-gated arcade with classic games and a competitive leaderboard.
+        </p>
+        <p class="text-muted mb-4">
+          مرحباً بك في أركيد هب — العب، تنافس، واحصل على أعلى النقاط
+        </p>
+        <a href="pages/login.html" class="btn btn-primary btn-lg me-2">
+          <i class="bi bi-box-arrow-in-right"></i> Login to Play
+        </a>
+        <a href="pages/leaderboard.html" class="btn btn-outline-primary btn-lg">
+          <i class="bi bi-trophy"></i> View Leaderboard
+        </a>
+      </div>
+    </section>
+
+    <!-- Features Section - قسم الميزات -->
+    <section class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">Features</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body text-center">
+                <i class="bi bi-puzzle display-4 text-primary mb-3"></i>
+                <h5 class="card-title">Memory Match</h5>
+                <p class="card-text">
+                  Test your memory with our emoji card-matching game.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body text-center">
+                <i class="bi bi-trophy-fill display-4 text-warning mb-3"></i>
+                <h5 class="card-title">Leaderboard</h5>
+                <p class="card-text">
+                  Compete with other players and climb the ranks.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body text-center">
+                <i class="bi bi-shield-lock display-4 text-success mb-3"></i>
+                <h5 class="card-title">Secure Login</h5>
+                <p class="card-text">
+                  Session-based authentication keeps your scores safe.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <!-- ============================================ -->
+  <!-- FOOTER - التذييل -->
+  <!-- ============================================ -->
+  <footer class="bg-dark text-light py-4 mt-auto">
+    <div class="container text-center">
+      <p class="mb-1">
+        <strong>Arcade Hub</strong> — CIS 376 Final Project, Spring 2026
+      </p>
+      <p class="mb-2 small">
+        Built by 
+        <a href="https://github.com/ehassan256417-afk" 
+           class="text-warning text-decoration-none">
+          Hassan
+        </a>
+      </p>
+      <p class="mb-0 small">
+        <a href="https://validator.w3.org/nu/?doc=https://ehassan256417-afk.github.io/arcade-hub/" 
+           class="text-light text-decoration-none me-3">
+          <i class="bi bi-check-circle"></i> Validate HTML
+        </a>
+        <a href="https://wave.webaim.org/report#/https://ehassan256417-afk.github.io/arcade-hub/" 
+           class="text-light text-decoration-none">
+          <i class="bi bi-universal-access"></i> Check Accessibility
+        </a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle / مكتبة Bootstrap الجافا سكربت -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- App Module / موديول التطبيق الرئيسي -->
   <script type="module" src="scripts/controllers/app-controller.js"></script>
 </body>
 </html>
