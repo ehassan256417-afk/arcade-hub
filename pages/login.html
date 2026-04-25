@@ -2,15 +2,100 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login - Arcade Hub</title>
+  
+  <!-- External Stylesheets / المكتبات الخارجية -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   <link rel="stylesheet" href="../styles/main.css">
 </head>
-<body>
-  <main class="container py-5">
-    <h1>Login</h1>
-    <p class="text-muted">Open browser console for the password hint.</p>
-    <!-- TODO: login form -->
+<body class="d-flex flex-column min-vh-100 bg-light">
+
+  <!-- NAVBAR / شريط التنقل -->
+  <nav class="navbar navbar-dark bg-primary shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="../index.html">
+        <i class="bi bi-controller"></i> Arcade Hub
+      </a>
+      <a href="../index.html" class="btn btn-outline-light btn-sm">
+        <i class="bi bi-arrow-left"></i> Back Home
+      </a>
+    </div>
+  </nav>
+
+  <!-- LOGIN FORM / نموذج تسجيل الدخول -->
+  <main class="flex-grow-1 d-flex align-items-center py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+          <div class="card shadow">
+            <div class="card-body p-4">
+              <div class="text-center mb-4">
+                <i class="bi bi-shield-lock display-4 text-primary"></i>
+                <h2 class="mt-2">Login</h2>
+                <p class="text-muted small">
+                  <i class="bi bi-info-circle"></i> 
+                  Open browser console (F12) for the password hint
+                </p>
+                <p class="text-muted small">
+                  افتح الكونسول (F12) عشان تشوف كلمة السر
+                </p>
+              </div>
+
+              <!-- Login Form Fields / حقول النموذج -->
+              <form id="loginForm" novalidate>
+                <div class="mb-3">
+                  <label for="username" class="form-label">
+                    <i class="bi bi-person"></i> Username
+                  </label>
+                  <input type="text" class="form-control" id="username" 
+                         placeholder="Enter your username" required>
+                  <div class="invalid-feedback">Please enter a username.</div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="password" class="form-label">
+                    <i class="bi bi-key"></i> Password
+                  </label>
+                  <input type="password" class="form-control" id="password" 
+                         placeholder="Enter your password" required>
+                  <div class="invalid-feedback">Please enter your password.</div>
+                </div>
+
+                <!-- Error Message Container / مكان رسالة الخطأ -->
+                <div id="loginError" class="alert alert-danger d-none" role="alert">
+                  <i class="bi bi-exclamation-triangle"></i> 
+                  <span id="errorText">Invalid credentials</span>
+                </div>
+
+                <button type="submit" id="loginButton" 
+                        class="btn btn-primary w-100 btn-lg">
+                  <i class="bi bi-box-arrow-in-right"></i> Sign In
+                </button>
+              </form>
+
+              <div class="text-center mt-3">
+                <small class="text-muted">
+                  Demo credentials: any username / password: <code>lasagna</code>
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
+
+  <!-- FOOTER / التذييل -->
+  <footer class="bg-dark text-light py-3 mt-auto">
+    <div class="container text-center small">
+      <p class="mb-0">Arcade Hub — CIS 376 Final Project</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Login script - to be implemented on Day 3 / السكربت يتعمل يوم 3 -->
 </body>
 </html>
