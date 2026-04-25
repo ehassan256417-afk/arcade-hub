@@ -22,7 +22,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navMenu">
-        <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav ms-auto align-items-center">
           <li class="nav-item">
             <a class="nav-link" href="../index.html">
               <i class="bi bi-house"></i> Home
@@ -37,6 +37,17 @@
             <a class="nav-link active" href="leaderboard.html">
               <i class="bi bi-trophy"></i> Leaderboard
             </a>
+          </li>
+          <li class="nav-item">
+            <span class="nav-link text-warning">
+              <i class="bi bi-person-circle"></i>
+              <span id="currentUser">Guest</span>
+            </span>
+          </li>
+          <li class="nav-item">
+            <button id="logoutBtn" class="btn btn-outline-light btn-sm ms-2">
+              <i class="bi bi-box-arrow-right"></i> Logout
+            </button>
           </li>
         </ul>
       </div>
@@ -207,6 +218,8 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Page protection + logout / حماية الصفحة وتسجيل الخروج -->
+  <script type="module" src="../scripts/modules/page-guard.js"></script>
   <!-- Leaderboard module - implemented on Day 5 / موديول الليدربورد يجي يوم 5 -->
 </body>
 </html>
