@@ -7,8 +7,8 @@ Author: Hassan ([@ehassan256417-afk](https://github.com/ehassan256417-afk))
 🚧 Under construction — final project for CIS 376, Spring 2026.
 
 ## Live Demo
-- GitHub Pages: (coming soon)
-- GCP Production: (coming soon)
+- 🌐 GitHub Pages: https://ehassan256417-afk.github.io/arcade-hub/
+- 🚀 GCP Production: http://35.184.199.164
 
 ## Tech Stack
 - HTML5 + CSS (Bootstrap 5 + Normalize + BS Icons)
