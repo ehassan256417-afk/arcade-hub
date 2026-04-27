@@ -14,13 +14,13 @@ Author: Hassan ([@ehassan256417-afk](https://github.com/ehassan256417-afk))
 
 All pages have been validated for HTML correctness and accessibility:
 
-### HTML Validation (Nu Validator) — ✅ Clean
+### HTML Validation (Nu Validator) — 0 Clean
 - [Home](https://validator.w3.org/nu/?doc=https%3A%2F%2Fehassan256417-afk.github.io%2Farcade-hub%2F)
 - [Login](https://validator.w3.org/nu/?doc=https%3A%2F%2Fehassan256417-afk.github.io%2Farcade-hub%2Fpages%2Flogin.html)
 - [Game](https://validator.w3.org/nu/?doc=https%3A%2F%2Fehassan256417-afk.github.io%2Farcade-hub%2Fpages%2Fgame.html)
 - [Leaderboard](https://validator.w3.org/nu/?doc=https%3A%2F%2Fehassan256417-afk.github.io%2Farcade-hub%2Fpages%2Fleaderboard.html)
 
-### Accessibility (WAVE) — ✅ 0 Errors
+### Accessibility (WAVE) —  0 Errors
 - [Home](https://wave.webaim.org/report#/https%3A%2F%2Fehassan256417-afk.github.io%2Farcade-hub%2F)
 - [Login](https://wave.webaim.org/report#/https%3A%2F%2Fehassan256417-afk.github.io%2Farcade-hub%2Fpages%2Flogin.html)
 - [Game](https://wave.webaim.org/report#/https%3A%2F%2Fehassan256417-afk.github.io%2Farcade-hub%2Fpages%2Fgame.html)
