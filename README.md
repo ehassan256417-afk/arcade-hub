@@ -91,26 +91,26 @@
 > > > >
 > > > > ## 📁 Project Structure
 > > > >
-> > > > .
-> > > > ├── LICENSE
-> > > > ├── README.md
-> > > > ├── assets
-> > > > │   ├── data
-> > > > │   └── images
-> > > > ├── docs
-> > > > ├── index.html
-> > > > ├── pages
-> > > > │   ├── game.html
-> > > > │   ├── leaderboard.html
-> > > > │   └── login.html
-> > > > ├── scripts
-> > > > │   ├── config
-> > > > │   ├── controllers
-> > > > │   └── modules
-> > > > └── styles
-> > > >     ├── components.css
-> > > >     ├── layout.css
-> > > >     └── main.css
+.
+├── LICENSE
+├── README.md
+├── assets
+│   ├── data
+│   └── images
+├── docs
+├── index.html
+├── pages
+│   ├── game.html
+│   ├── leaderboard.html
+│   └── login.html
+├── scripts
+│   ├── config
+│   ├── controllers
+│   └── modules
+└── styles
+    ├── components.css
+    ├── layout.css
+    └── main.css
 > > > >
 > > > > The project follows a logical separation:
 > > > > - assets/ — Static data (JSON) and images
