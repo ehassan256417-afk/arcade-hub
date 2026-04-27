@@ -111,6 +111,7 @@
     ├── components.css
     ├── layout.css
     └── main.css
+    .
 > > > >
 > > > > The project follows a logical separation:
 > > > > - assets/ — Static data (JSON) and images
