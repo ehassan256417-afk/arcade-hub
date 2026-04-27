@@ -91,8 +91,42 @@
 > > > >
 > > > > ## 📁 Project Structure
 > > > >
-<img width="492" height="586" alt="image" src="https://github.com/user-attachments/assets/ed4e059c-55bd-4f9e-af29-7cdaa0e815d9" />
-
+```
+.
+└── app
+    ├── LICENSE
+    ├── README.md
+    ├── assets
+    │   ├── data
+    │   │   ├── leaderboard.json
+    │   │   └── users.json
+    │   └── images
+    ├── docs
+    ├── index.html
+    ├── pages
+    │   ├── game.html
+    │   ├── leaderboard.html
+    │   └── login.html
+    ├── scripts
+    │   ├── config
+    │   │   └── defaults.js
+    │   ├── controllers
+    │   │   ├── app-controller.js
+    │   │   ├── game-controller.js
+    │   │   └── leaderboard-controller.js
+    │   └── modules
+    │       ├── auth.js
+    │       ├── game-engine.js
+    │       ├── leaderboard.js
+    │       ├── login-handler.js
+    │       ├── page-guard.js
+    │       ├── shuffle.js
+    │       └── ui.js
+    └── styles
+        ├── components.css
+        ├── layout.css
+        └── main.css
+```
 > > > >
 > > > > The project follows a logical separation:
 > > > > - assets/ — Static data (JSON) and images
