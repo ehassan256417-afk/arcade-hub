@@ -33,23 +33,23 @@
 > > > >
 > > > > ### What I improved
 > > > > Compared to the original emoji-memory-match:
-> > > > - ✅ Migrated from localStorage to sessionStorage (rubric requirement)
-> > > > - - ✅ Added a full authentication system with credential hints in the console
-> > > >   - - ✅ Built a leaderboard with fetch() loading from JSON files
-> > > >     - - ✅ Added search, filter, and sort capabilities
-> > > >       - - ✅ Form data is packaged as JSON and printed to the console
-> > > >         - - ✅ Removed all inline styles in favor of CSS classes
-> > > >           - - ✅ Added Normalize.css and Bootstrap Icons (previously missing)
-> > > >             - - ✅ Used @import to organize stylesheets
-> > > >               - - ✅ Refactored to clean ES Modules with explicit imports/exports
-> > > >                 - - ✅ Added bilingual code comments (English + Arabic) for clarity
+> > > > - Migrated from localStorage to sessionStorage (rubric requirement)
+> > > > - Added a full authentication system with credential hints in the console
+> > > >   Built a leaderboard with fetch() loading from JSON files
+> > > >   Added search, filter, and sort capabilities
+> > > >   Form data is packaged as JSON and printed to the console
+> > > >   Removed all inline styles in favor of CSS classes
+> > > >   Added Normalize.css and Bootstrap Icons (previously missing)
+> > > >   Used @import to organize stylesheets
+> > > >   Refactored to clean ES Modules with explicit imports/exports
+> > > >   Added bilingual code comments (English + Arabic) for clarity
 > > > >                  
-> > > >                   - ### Brief development story
-> > > >                   - This was a 10-day sprint built in tight, focused sessions. Day 1 was repo scaffolding and folder structure. Days 2–5 built the UI, authentication, game engine, and leaderboard. Day 6 was the biggest learning curve — deploying to a Google Cloud VM with nginx as a reverse proxy. Days 7–10 covered validation, documentation, and polish. Each day was committed to GitHub Pages with progressive features, and the GCP production deployment was kept in sync via git pull.
+> > > >       - ### Brief development story
+> > > >         - This was a 10-day sprint built in tight, focused sessions. Day 1 was repo scaffolding and folder structure. Days 2–5 built the UI, authentication, game engine, and leaderboard. Day 6 was the biggest learning curve — deploying to a Google Cloud VM with nginx as a reverse proxy. Days 7–10 covered validation, documentation, and polish. Each day was committed to GitHub Pages with progressive features, and the GCP production deployment was kept in sync via git pull.
 > > > >                  
 > > > >                   - ---
 > > > >
-> > > > ## 🛠️ Tech Stack
+> > > > ## Tech Stack
 > > > >
 > > > > | Layer | Technology |
 > > > > |-------|------------|
@@ -70,15 +70,15 @@
 > > > >
 > > > > ### Libraries & Frameworks
 > > > > - [Bootstrap 5.3](https://getbootstrap.com/) — UI components and grid system
-> > > > - - [Bootstrap Icons](https://icons.getbootstrap.com/) — Iconography
-> > > >   - - [Normalize.css](https://necolas.github.io/normalize.css/) — Cross-browser consistency
-> > > >     - - [Google Fonts: Nunito](https://fonts.google.com/specimen/Nunito) — Typography
-> > > >      
-> > > >       - ### Tutorials & References
-> > > >       - - [MDN Web Docs](https://developer.mozilla.org/) — JavaScript, CSS, and HTML reference
-> > > >         - - [Fisher-Yates Shuffle (Wikipedia)](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle) — Shuffling algorithm
-> > > >           - - [Course materials by Prof. Barry Cumbie](https://github.com/barrycumbie) — GCP deployment walkthrough
-> > > >             - - [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) — Accessibility verification
+> > > > - [Bootstrap Icons](https://icons.getbootstrap.com/) — Iconography
+> > > > - [Normalize.css](https://necolas.github.io/normalize.css/) — Cross-browser consistency
+> > > > - [Google Fonts: Nunito](https://fonts.google.com/specimen/Nunito) — Typography
+> > > >    
+> > > >  ### Tutorials & References
+> > > >  [MDN Web Docs](https://developer.mozilla.org/) — JavaScript, CSS, and HTML reference
+> > > >  [Fisher-Yates Shuffle (Wikipedia)](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle) — Shuffling algorithm
+> > > >  [Course materials by Prof. Barry Cumbie](https://github.com/barrycumbie) — GCP deployment walkthrough
+> > > >  [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) — Accessibility verification
 > > > >              
 > > > >               - ### AI Assistance
 > > > >               - - Used Claude (Anthropic) for code review, architecture suggestions, and documentation help. All final code was reviewed, tested, and committed manually.
