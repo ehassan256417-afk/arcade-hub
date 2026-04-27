@@ -47,7 +47,7 @@
 > > > >   ### Brief development story
 > > > >   - This was a 10-day sprint built in tight, focused sessions. Day 1 was repo scaffolding and folder structure. Days 2–5 built the UI, authentication, game engine, and leaderboard. Day 6 was the biggest learning curve — deploying to a Google Cloud VM with nginx as a reverse proxy. Days 7–10 covered validation, documentation, and polish. Each day was committed to GitHub Pages with progressive features, and the GCP production deployment was kept in sync via git pull.
 > > > >                  
-> > > >                   - ---
+> > > >                   
 > > > >
 > > > > ## Tech Stack
 > > > >
@@ -87,7 +87,7 @@
 > > > >                 - - Extended my own emoji-memory-match](https://github.com/ehassan256417-afk/emoji-memory-match) project (Fisher-Yates shuffle, card flip logic)
 > > > >                   - - Authentication patterns from my own CIS-376-MID-TERM-PROJECT](https://github.com/ehassan256417-afk/CIS-376-MID-TERM-PROJECT)
 > > > >                    
-> > > >                     - ---
+> > > >                     
 > > > >
 > > > > ## 📁 Project Structure
 > > > >
@@ -103,7 +103,7 @@
 > > > >        
 > > > >         - ---
 > > > >
-> > > > ## 💡 Code Highlight
+> > > > ##  Code Highlight
 > > > >
 > > > > The cleanest example of DOM manipulation tied to a clear data flow is the leaderboard rendering pipeline. Here's the core search filter from scripts/modules/leaderboard.js:
 > > > >
@@ -134,34 +134,30 @@
 > > > >
 > > > > ### How it interacts with the DOM
 > > > > The data flow is: **DOM → script → DOM**.
-> > > > 1. User types in <input id="searchInput"> — the DOM emits an input event
-> > > > 2. 2. leaderboard-controller.js listens via addEventListener('input', ...) and reads searchInput.value
-> > > >    3. 3. The controller calls searchByPlayer(allEntries, value) — pure data transformation
-> > > >       4. 4. The result passes through filterByDifficulty() and applySorting() (also pure functions)
-> > > >          5. 5. Finally renderLeaderboard() clears the <tbody id="leaderboardBody"> and appends new <tr> rows for each match
-> > > >             6. 6. The DOM updates instantly — no reload, no flicker
-> > > >               
-> > > >                7. This separation of **data transformation** (pure functions) from **DOM manipulation** (single render function) makes the code testable, predictable, and easy to extend with new filters in the future.
-> > > >               
-> > > >                8. ---
-> > > >               
-> > > >                9. ## ✅ Validation
+> > > > User types in <input id="searchInput"> — the DOM emits an input event
+> > > > leaderboard-controller.js listens via addEventListener('input', ...) and reads searchInput.value
+> > > > The controller calls searchByPlayer(allEntries, value) — pure data transformation
+> > > > The result passes through filterByDifficulty() and applySorting() (also pure functions)
+> > > > Finally renderLeaderboard() clears the <tbody id="leaderboardBody"> and appends new <tr> rows for each match
+> > > > The DOM updates instantly — no reload, no flicker
+> > > > This separation of **data transformation** (pure functions) from **DOM manipulation** (single render function) makes the code testable, predictable, and easy to extend with new filters in the future.
+> > > >  Validation
 > > > >
 > > > > All pages have been validated for HTML correctness and accessibility:
 > > > >
 > > > > ### HTML Validation (Nu Validator) — ✅ Clean
 > > > > - [Home](https://validator.w3.org/nu/?doc=https%3A%2F%2Fehassan256417-afk.github.io%2Farcade-hub%2F)
-> > > > - - [Login](https://validator.w3.org/nu/?doc=https%3A%2F%2Fehassan256417-afk.github.io%2Farcade-hub%2Fpages%2Flogin.html)
-> > > >   - - [Game](https://validator.w3.org/nu/?doc=https%3A%2F%2Fehassan256417-afk.github.io%2Farcade-hub%2Fpages%2Fgame.html)
-> > > >     - - [Leaderboard](https://validator.w3.org/nu/?doc=https%3A%2F%2Fehassan256417-afk.github.io%2Farcade-hub%2Fpages%2Fleaderboard.html)
+> > > > -  [Login](https://validator.w3.org/nu/?doc=https%3A%2F%2Fehassan256417-afk.github.io%2Farcade-hub%2Fpages%2Flogin.html)
+> > > > -  [Game](https://validator.w3.org/nu/?doc=https%3A%2F%2Fehassan256417-afk.github.io%2Farcade-hub%2Fpages%2Fgame.html)
+> > > > - [Leaderboard](https://validator.w3.org/nu/?doc=https%3A%2F%2Fehassan256417-afk.github.io%2Farcade-hub%2Fpages%2Fleaderboard.html)
 > > > >      
-> > > >       - ### Accessibility (WAVE) — ✅ 0 Errors
-> > > >       - - [Home](https://wave.webaim.org/report#/https%3A%2F%2Fehassan256417-afk.github.io%2Farcade-hub%2F)
-> > > >         - - [Login](https://wave.webaim.org/report#/https%3A%2F%2Fehassan256417-afk.github.io%2Farcade-hub%2Fpages%2Flogin.html)
-> > > >           - - [Game](https://wave.webaim.org/report#/https%3A%2F%2Fehassan256417-afk.github.io%2Farcade-hub%2Fpages%2Fgame.html)
-> > > >             - - [Leaderboard](https://wave.webaim.org/report#/https%3A%2F%2Fehassan256417-afk.github.io%2Farcade-hub%2Fpages%2Fleaderboard.html)
+> > > > ### Accessibility (WAVE) — ✅ 0 Errors
+> > > > - [Home](https://wave.webaim.org/report#/https%3A%2F%2Fehassan256417-afk.github.io%2Farcade-hub%2F)
+> > > > - [Login](https://wave.webaim.org/report#/https%3A%2F%2Fehassan256417-afk.github.io%2Farcade-hub%2Fpages%2Flogin.html)
+> > > > - [Game](https://wave.webaim.org/report#/https%3A%2F%2Fehassan256417-afk.github.io%2Farcade-hub%2Fpages%2Fgame.html)
+> > > > - [Leaderboard](https://wave.webaim.org/report#/https%3A%2F%2Fehassan256417-afk.github.io%2Farcade-hub%2Fpages%2Fleaderboard.html)
 > > > >              
-> > > >               - ---
+> > > >               
 > > > >
 > > > > ## 🚀 Future Improvements
 > > > >
@@ -170,30 +166,30 @@
 > > > > 👉 **[Sprint 99 — Post-Launch Improvements](https://github.com/ehassan256417-afk/arcade-hub/milestone/1)**
 > > > >
 > > > > This milestone includes:
-> > > > - 🎮 Sound effects with accessibility mute toggle
-> > > > - - 🏆 Cross-session leaderboard with backend API
-> > > >   - - 🌗 Light/dark theme toggle
-> > > >     - - 🐛 Progress bar flicker bug fix
-> > > >       - - 📹 Video walkthrough in README
-> > > >         - - ♿ Re-validation after new features
+> > > >   Sound effects with accessibility mute toggle
+> > > >   Cross-session leaderboard with backend API
+> > > >   Light/dark theme toggle
+> > > >  Progress bar flicker bug fix
+> > > >  Video walkthrough in README
+> > > >  Re-validation after new features
 > > > >          
-> > > >           - ---
+> > > >        
 > > > >
 > > > > ## 🔐 Demo Credentials
 > > > >
 > > > > To explore the app:
-> > > > 1. Visit the [Login page](https://ehassan256417-afk.github.io/arcade-hub/pages/login.html)
-> > > > 2. 2. Open the browser console (F12) — credential hint is logged there
-> > > >    3. 3. Username: hassan or player1
-> > > >       4. 4. Password: lasagna
+> > > > Visit the [Login page](https://ehassan256417-afk.github.io/arcade-hub/pages/login.html)
+> > > > Open the browser console (F12) — credential hint is logged there
+> > > > Username: hassan or player1
+> > > > Password: lasagna
 > > > >         
-> > > >          5. ---
-> > > >         
-> > > >          6. ## 📜 License
-> > > >         
-> > > >          7. MIT — see [LICENSE](LICENSE) file.
 > > > >
-> > > > ---
+> > > >         
+> > > > 📜 License
+> > > >         
+> > > > MIT — see [LICENSE](LICENSE) file.
+> > > >
+> > > > 
 > > > >
 > > > > *Built with ☕ and 🎮 for CIS 376 Final Project, Spring 2026*
 > > > > 
