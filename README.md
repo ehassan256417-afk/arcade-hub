@@ -91,27 +91,8 @@
 > > > >
 > > > > ## 📁 Project Structure
 > > > >
-.
-├── LICENSE
-├── README.md
-├── assets
-│   ├── data
-│   └── images
-├── docs
-├── index.html
-├── pages
-│   ├── game.html
-│   ├── leaderboard.html
-│   └── login.html
-├── scripts
-│   ├── config
-│   ├── controllers
-│   └── modules
-└── styles
-    ├── components.css
-    ├── layout.css
-    └── main.css
-    .
+<img width="492" height="586" alt="image" src="https://github.com/user-attachments/assets/ed4e059c-55bd-4f9e-af29-7cdaa0e815d9" />
+
 > > > >
 > > > > The project follows a logical separation:
 > > > > - assets/ — Static data (JSON) and images
