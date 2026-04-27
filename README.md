@@ -44,8 +44,8 @@
 > > > >   Refactored to clean ES Modules with explicit imports/exports
 > > > >   Added bilingual code comments (English + Arabic) for clarity
 > > > >                  
-> > > >       - ### Brief development story
-> > > >         - This was a 10-day sprint built in tight, focused sessions. Day 1 was repo scaffolding and folder structure. Days 2–5 built the UI, authentication, game engine, and leaderboard. Day 6 was the biggest learning curve — deploying to a Google Cloud VM with nginx as a reverse proxy. Days 7–10 covered validation, documentation, and polish. Each day was committed to GitHub Pages with progressive features, and the GCP production deployment was kept in sync via git pull.
+> > > >   ### Brief development story
+> > > >   - This was a 10-day sprint built in tight, focused sessions. Day 1 was repo scaffolding and folder structure. Days 2–5 built the UI, authentication, game engine, and leaderboard. Day 6 was the biggest learning curve — deploying to a Google Cloud VM with nginx as a reverse proxy. Days 7–10 covered validation, documentation, and polish. Each day was committed to GitHub Pages with progressive features, and the GCP production deployment was kept in sync via git pull.
 > > > >                  
 > > > >                   - ---
 > > > >
@@ -80,10 +80,10 @@
 > > > >  [Course materials by Prof. Barry Cumbie](https://github.com/barrycumbie) — GCP deployment walkthrough
 > > > >  [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) — Accessibility verification
 > > > >              
-> > > >               - ### AI Assistance
-> > > >               - - Used Claude (Anthropic) for code review, architecture suggestions, and documentation help. All final code was reviewed, tested, and committed manually.
+> > > > ### AI Assistance
+> > > >  Used Claude (Anthropic) for code review, architecture suggestions, and documentation help. All final code was reviewed, tested, and committed manually.
 > > > >                
-> > > >                 - ### Source Code Reuse
+> > > >  Source Code Reuse
 > > > >                 - - Extended my own emoji-memory-match](https://github.com/ehassan256417-afk/emoji-memory-match) project (Fisher-Yates shuffle, card flip logic)
 > > > >                   - - Authentication patterns from my own CIS-376-MID-TERM-PROJECT](https://github.com/ehassan256417-afk/CIS-376-MID-TERM-PROJECT)
 > > > >                    
