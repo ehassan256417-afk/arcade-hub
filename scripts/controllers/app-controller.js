@@ -25,6 +25,9 @@ function initHomePage() {
   // Check if user is already logged in
   // نشيك إذا اليوزر مسجل دخول
   if (isAuthN()) {
+        // Debug authN state (Professor Cumbie requested)
+        console.log('AuthN session value:', sessionStorage.getItem('isAuthN'));
+        console.log('isAuthN() result:', isAuthN());
     // Show welcome back message
     // نعرض رسالة "أهلاً بعودتك"
     const username = sessionStorage.getItem('username');
