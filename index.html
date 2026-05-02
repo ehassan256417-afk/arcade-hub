@@ -13,11 +13,10 @@
   
   <!-- Custom Styles / الستايل الخاص -->
   <link rel="stylesheet" href="styles/main.css">
-<!--Add app-controller script to index.html -->
+  <!-- App Module / موديول التطبيق الرئيسي -->
   <script type="module" src="scripts/controllers/app-controller.js"></script>
 </head>
 <body class="d-flex flex-column min-vh-100">
-
   <!-- ============================================ -->
   <!-- NAVBAR - شريط التنقل العلوي -->
   <!-- ============================================ -->
@@ -32,13 +31,14 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navMenu">
-        <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
           <li class="nav-item">
             <a class="nav-link active" href="index.html">
               <i class="bi bi-house"></i> Home
             </a>
           </li>
-          <li class="nav-item">
+          <!-- "Play" link only visible when logged IN -->
+          <li class="nav-item d-none" id="navPlayItem">
             <a class="nav-link" href="pages/game.html">
               <i class="bi bi-joystick"></i> Play
             </a>
@@ -48,16 +48,28 @@
               <i class="bi bi-trophy"></i> Leaderboard
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link btn btn-warning text-dark ms-2 px-3" href="pages/login.html">
+          <!-- LOGGED-OUT VIEW: Login button -->
+          <li class="nav-item" id="navLoginItem">
+            <a class="nav-link btn btn-warning text-dark ms-lg-2 px-3" href="pages/login.html">
               <i class="bi bi-box-arrow-in-right"></i> Login
             </a>
+          </li>
+          <!-- LOGGED-IN VIEW: Username + Logout -->
+          <li class="nav-item d-none" id="navUserItem">
+            <span class="nav-link text-warning">
+              <i class="bi bi-person-circle"></i>
+              <span id="currentUser">Guest</span>
+            </span>
+          </li>
+          <li class="nav-item d-none" id="navLogoutItem">
+            <button id="logoutBtn" class="btn btn-outline-light btn-sm ms-lg-2">
+              <i class="bi bi-box-arrow-right"></i> Logout
+            </button>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-
   <!-- ============================================ -->
   <!-- HERO SECTION - القسم الرئيسي الترحيبي -->
   <!-- ============================================ -->
@@ -73,16 +85,20 @@
         <p class="text-muted mb-4">
           مرحباً بك في أركيد هب — العب، تنافس، واحصل على أعلى النقاط
         </p>
-        <a href="pages/login.html" class="btn btn-primary btn-lg me-2">
+        <!-- HERO CTA: Login button (logged-out) -->
+        <a href="pages/login.html" id="heroLoginBtn" class="btn btn-primary btn-lg me-2">
           <i class="bi bi-box-arrow-in-right"></i> Login to Play
+        </a>
+        <!-- HERO CTA: Play Now button (logged-in) -->
+        <a href="pages/game.html" id="heroPlayBtn" class="btn btn-primary btn-lg me-2 d-none">
+          <i class="bi bi-joystick"></i> Play Now
         </a>
         <a href="pages/leaderboard.html" class="btn btn-outline-primary btn-lg">
           <i class="bi bi-trophy"></i> View Leaderboard
         </a>
       </div>
     </section>
-
-    <!-- Features Section - قسم الميزات -->
+    <!-- Features Section -->
     <section class="py-5">
       <div class="container">
         <h2 class="text-center mb-5">Features</h2>
@@ -124,10 +140,7 @@
       </div>
     </section>
   </main>
-
-  <!-- ============================================ -->
-  <!-- FOOTER - التذييل -->
-  <!-- ============================================ -->
+  <!-- FOOTER -->
   <footer class="bg-dark text-light py-4 mt-auto">
     <div class="container text-center">
       <p class="mb-1">
@@ -152,11 +165,6 @@
       </p>
     </div>
   </footer>
-
-  <!-- Bootstrap JS Bundle / مكتبة Bootstrap الجافا سكربت -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  
-  <!-- App Module / موديول التطبيق الرئيسي -->
-  <script type="module" src="scripts/controllers/app-controller.js"></script>
 </body>
 </html>
