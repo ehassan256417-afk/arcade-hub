@@ -235,7 +235,7 @@ To explore the app:
 
 1. Visit the [Login page](https://ehassan256417-afk.github.io/arcade-hub/pages/login.html)
 2. Open the browser console (F12) — credential hint is logged there
-3. **Username:** `hassan` or `player1`
+3. **Username:** enter ANY username
 4. **Password:** `lasagna`
 
 ---
